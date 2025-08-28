@@ -1,13 +1,134 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 // NextecAsia Landing Page - ReportPortal Pentest Vulnerability Management Platform
 // Tailwind CSS required in the project (no external CSS files here)
 // Usage: import NextecAsiaLanding from './NextecAsiaLanding'; then render <NextecAsiaLanding />
 
 export default function NextecAsiaLanding() {
+  const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const languageDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Only the 8 languages you specified
+  const SUPPORTED_LANGUAGES = [
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "zh", name: "中文", flag: "🇨🇳" },
+    { code: "ja", name: "日本語", flag: "🇯🇵" },
+    { code: "ar", name: "العربية", flag: "🇸🇦" },
+    { code: "hi", name: "हिन्दी", flag: "🇮🇳" },
+    { code: "th", name: "ไทย", flag: "🇹🇭" },
+    { code: "vi", name: "Tiếng Việt", flag: "🇻🇳" },
+    { code: "id", name: "Bahasa Indonesia", flag: "🇮🇩" }
+  ];
+
+  const handleLanguageChange = (langCode: string) => {
+    setCurrentLanguage(langCode);
+    i18n.changeLanguage(langCode);
+    setIsLanguageDropdownOpen(false);
+  };
+
+  const getCurrentLanguageData = () => {
+    return SUPPORTED_LANGUAGES.find(lang => lang.code === currentLanguage) || SUPPORTED_LANGUAGES[0];
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target as Node)) {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-950 text-slate-100 antialiased">
+      {/* Navigation Header - Now at the very top */}
+      <nav className="relative z-20 flex items-center justify-between py-6 px-6 border-b border-slate-700/50 bg-slate-900/50 backdrop-blur-sm">
+        <motion.div
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex items-center gap-3"
+        >
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <span className="text-2xl font-bold text-white">NextecAsia</span>
+        </motion.div>
+
+        <motion.div
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="hidden md:flex items-center gap-8"
+        >
+          <a href="#features" className="text-slate-300 hover:text-white transition-colors">{t('nav.product')}</a>
+          <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">{t('nav.pricing')}</a>
+          <a href="#contact" className="text-slate-300 hover:text-white transition-colors">{t('nav.contact')}</a>
+          <a href="#" className="text-slate-300 hover:text-white transition-colors">{t('nav.about')}</a>
+        </motion.div>
+
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex items-center gap-4"
+        >
+          {/* Interactive Language Selector - Actually Clickable! */}
+          <div className="relative" ref={languageDropdownRef}>
+            <button
+              onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+              className="flex items-center gap-2 px-3 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50 cursor-pointer"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5h12M9 3v2m1.5 8H9m2.5-8H15m-1.5 8a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+              </svg>
+              <span className="text-sm font-medium">{getCurrentLanguageData().code.toUpperCase()}</span>
+              <svg className={`w-4 h-4 transition-transform ${isLanguageDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Language Dropdown - Shows when clicked */}
+            {isLanguageDropdownOpen && (
+              <div className="absolute right-0 top-full mt-2 w-48 bg-slate-800/95 border border-slate-700 rounded-xl shadow-2xl z-50 backdrop-blur-xl">
+                <div className="p-3">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 text-center">{t('languageSelector.selectLanguage')}</div>
+
+                  {/* Language Options - All 8 languages you specified */}
+                  <div className="space-y-1">
+                    {SUPPORTED_LANGUAGES.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className={`flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-colors w-full text-left cursor-pointer ${
+                          currentLanguage === lang.code
+                            ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30'
+                            : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                        }`}
+                      >
+                        <span className="text-lg">{lang.flag}</span>
+                        <span className="flex-1">{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      </nav>
+
       {/* Top SVG decorative background */}
       <header className="relative overflow-hidden">
         <svg
@@ -52,13 +173,12 @@ export default function NextecAsiaLanding() {
               className="w-full lg:w-2/3"
             >
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              NextecAsia
-                <span className="ml-2 text-purple-400">Pentest Vulnerability Management</span>
+                {t('hero.title')}
+                <span className="ml-2 text-purple-400">{t('hero.mainHeading')}</span>
               </h1>
 
               <p className="mt-4 text-slate-300 max-w-2xl text-lg">
-                Enterprise-grade platform for managing penetration testing projects, findings, and reports
-                with advanced security features, multi-tenant architecture, and AI-powered insights.
+                {t('hero.mainDescription')}
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -66,7 +186,7 @@ export default function NextecAsiaLanding() {
                   href="#pricing"
                   className="inline-flex items-center gap-3 rounded-2xl bg-purple-600/95 px-5 py-3 font-semibold shadow-lg hover:bg-purple-500 transition"
                 >
-                  View Pricing
+                  {t('hero.viewPricing')}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5"
@@ -85,16 +205,16 @@ export default function NextecAsiaLanding() {
                   href="#features"
                   className="inline-flex items-center gap-3 rounded-2xl border border-slate-700 px-5 py-3 font-semibold hover:bg-slate-800 transition"
                 >
-                  Product features
+                  {t('nav.product')} {t('features.title')}
                 </a>
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-400">
-                <span className="inline-flex items-center gap-2">✓ Own customizable report templates</span>
-                <span className="inline-flex items-center gap-2">✓ AI powered finding explanation and managment reporting</span>
-                <span className="inline-flex items-center gap-2">✓ Multi-tenant architecture</span>
-                <span className="inline-flex items-center gap-2">✓ Real-time notifications</span>
-                <span className="inline-flex items-center gap-2">✓ Good customer service</span>
+                <span className="inline-flex items-center gap-2">✓ {t('featuresList.customizableTemplates')}</span>
+                <span className="inline-flex items-center gap-2">✓ {t('featuresList.aiPoweredFindings')}</span>
+                <span className="inline-flex items-center gap-2">✓ {t('featuresList.multiTenant')}</span>
+                <span className="inline-flex items-center gap-2">✓ {t('featuresList.realTimeNotifications')}</span>
+                <span className="inline-flex items-center gap-2">✓ {t('featuresList.customerService')}</span>
               </div>
             </motion.div>
 
@@ -108,7 +228,7 @@ export default function NextecAsiaLanding() {
               <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-6 shadow-xl backdrop-blur">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold">Start your pentest management</h3>
+                    <h3 className="text-lg font-semibold">{t('trialForm.title')}</h3>
                     <p className="mt-1 text-sm text-slate-400">14-day free trial — no credit card</p>
                   </div>
                   <div className="text-right">
@@ -120,20 +240,20 @@ export default function NextecAsiaLanding() {
                 <form className="mt-6 grid gap-3">
                   <input
                     type="email"
-                    placeholder="Work email"
+                    placeholder={t('trialForm.emailPlaceholder')}
                     className="w-full bg-slate-900/40 border border-slate-700 rounded-md px-3 py-2 text-slate-100 placeholder-slate-500"
                   />
                   <input
                     type="text"
-                    placeholder="Company name"
+                    placeholder={t('trialForm.companyPlaceholder')}
                     className="w-full bg-slate-900/40 border border-slate-700 rounded-md px-3 py-2 text-slate-100 placeholder-slate-500"
                   />
 
                   <button className="w-full rounded-md bg-purple-600/95 py-2 font-semibold hover:bg-purple-500 transition">
-                    Start Free Trial
+                    {t('trialForm.startTrial')}
                   </button>
 
-                  <div className="text-xs text-slate-500">By signing up you agree to our terms.</div>
+                  <div className="text-xs text-slate-500">{t('trialForm.terms')}</div>
                 </form>
               </div>
             </motion.div>
@@ -144,40 +264,116 @@ export default function NextecAsiaLanding() {
       <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Features */}
         <section id="features" className="mt-6">
-          <h2 className="text-3xl font-bold text-center">Why Choose NextecAsia?</h2>
+          <h2 className="text-3xl font-bold text-center">{t('features.title')}</h2>
           <p className="mt-4 text-slate-400 max-w-3xl mx-auto text-center text-lg">
-            Enterprise-grade pentest vulnerability management with advanced security features,
-            multi-tenant architecture, and AI-powered insights.
+            {t('features.subtitle')}
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {FEATURES.map((f, index) => (
-              <motion.article
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -6 }}
-                className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
-              >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
-                  <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
-                    <path d={f.icon} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-xl mb-3 text-white">{f.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
-              </motion.article>
-            ))}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
+                  <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-3 text-white">{t('features.items.multiTenant.title')}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t('features.items.multiTenant.description')}</p>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
+                  <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-3 text-white">{t('features.items.accessControl.title')}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t('features.items.accessControl.description')}</p>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
+                  <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-3 text-white">{t('features.items.intelligentInsights.title')}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t('features.items.intelligentInsights.description')}</p>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
+                  <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-3 text-white">{t('features.items.realTimeNotifications.title')}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t('features.items.realTimeNotifications.description')}</p>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
+                  <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-3 text-white">{t('features.items.professionalReporting.title')}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t('features.items.professionalReporting.description')}</p>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 grid place-items-center mb-4">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor">
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-3 text-white">{t('features.items.riskAssessment.title')}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{t('features.items.riskAssessment.description')}</p>
+            </motion.article>
           </div>
         </section>
 
         {/* Product Showcase */}
         <section className="mt-16">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold">See NextecAsia in Action</h3>
+            <h3 className="text-3xl font-bold">{t('showcase.title')}</h3>
             <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
-              Powerful features designed for modern penetration testing teams
+              {t('showcase.subtitle')}
             </p>
           </div>
 
@@ -233,9 +429,9 @@ export default function NextecAsiaLanding() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-semibold mb-3">Risk Assessment Dashboard</h4>
+              <h4 className="text-xl font-semibold mb-3">{t('showcase.riskAssessment.title')}</h4>
               <p className="text-slate-400 text-sm">
-                Real-time risk scoring with color-coded severity levels and trend analysis
+                {t('showcase.riskAssessment.description')}
               </p>
             </motion.div>
 
@@ -286,9 +482,9 @@ export default function NextecAsiaLanding() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-semibold mb-3">Multi-Tenant Architecture</h4>
+              <h4 className="text-xl font-semibold mb-3">{t('showcase.multiTenant.title')}</h4>
               <p className="text-slate-400 text-sm">
-                Complete tenant isolation with dedicated management and resource allocation
+                {t('showcase.multiTenant.description')}
               </p>
             </motion.div>
 
@@ -346,9 +542,9 @@ export default function NextecAsiaLanding() {
                   </g>
                 </svg>
               </div>
-              <h4 className="text-xl font-semibold mb-3">AI-Powered Assistance</h4>
+              <h4 className="text-xl font-semibold mb-3">{t('showcase.aiPowered.title')}</h4>
               <p className="text-slate-400 text-sm">
-                Multi-provider AI support for vulnerability analysis and remediation guidance
+                {t('showcase.aiPowered.description')}
               </p>
             </motion.div>
           </div>
@@ -357,42 +553,84 @@ export default function NextecAsiaLanding() {
         {/* How it works */}
         <section className="mt-16">
           <div className="text-center">
-            <h3 className="text-3xl font-bold">How NextecAsia Works</h3>
+            <h3 className="text-3xl font-bold">{t('howItWorks.title')}</h3>
             <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
-              Streamlined workflow from initial assessment to final report delivery
+              {t('howItWorks.subtitle')}
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-            {STEPS.map((s, idx) => (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative"
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center text-white font-bold text-xl">
-                    {idx + 1}
-                  </div>
-                  <h4 className="text-xl font-semibold mb-3 text-white">{s.title}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center text-white font-bold text-xl">
+                  1
                 </div>
-                {idx < STEPS.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-purple-600 to-transparent transform translate-x-4" />
-                )}
-              </motion.div>
-            ))}
+                <h4 className="text-xl font-semibold mb-3 text-white">{t('howItWorks.steps.setup.title')}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">{t('howItWorks.steps.setup.description')}</p>
+              </div>
+              <div className="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-purple-600 to-transparent transform translate-x-4" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center text-white font-bold text-xl">
+                  2
+                </div>
+                <h4 className="text-xl font-semibold mb-3 text-white">{t('howItWorks.steps.plan.title')}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">{t('howItWorks.steps.plan.description')}</p>
+              </div>
+              <div className="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-purple-600 to-transparent transform translate-x-4" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center text-white font-bold text-xl">
+                  3
+                </div>
+                <h4 className="text-xl font-semibold mb-3 text-white">{t('howItWorks.steps.document.title')}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">{t('howItWorks.steps.document.description')}</p>
+              </div>
+              <div className="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-purple-600 to-transparent transform translate-x-4" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center text-white font-bold text-xl">
+                  4
+                </div>
+                <h4 className="text-xl font-semibold mb-3 text-white">{t('howItWorks.steps.track.title')}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">{t('howItWorks.steps.track.description')}</p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Integrations */}
         <section className="mt-16">
           <div className="text-center">
-            <h3 className="text-3xl font-bold">Powerful Integrations</h3>
+            <h3 className="text-3xl font-bold">{t('integrations.title')}</h3>
             <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
-              Seamlessly connect with your existing tools and workflows
+              {t('integrations.subtitle')}
             </p>
           </div>
 
@@ -442,64 +680,284 @@ export default function NextecAsiaLanding() {
         {/* Pricing / Plans */}
         <section id="pricing" className="mt-16">
           <div className="text-center">
-            <h3 className="text-3xl font-bold">Choose Your Plan</h3>
+            <h3 className="text-3xl font-bold">{t('pricing.title')}</h3>
             <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
-              Start with our flexible pricing plans. All plans include a 14-day free trial.
+              {t('pricing.subtitle')}
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {PLANS.map((p, index) => (
-              <motion.div
-                key={p.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative bg-slate-900/50 border rounded-2xl p-6 ${
-                  p.popular
-                    ? 'border-purple-500 ring-2 ring-purple-500/20'
-                    : 'border-slate-700'
-                }`}
-              >
-                {p.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center">
-                  <h4 className="font-semibold text-xl">{p.name}</h4>
-                  <div className="mt-2">
-                    <span className="text-3xl font-bold">${p.price}</span>
-                    <span className="text-slate-400 text-sm">/month</span>
-                  </div>
-                  <p className="text-slate-400 text-sm mt-1">{p.subtitle}</p>
+            {/* Basic Plan - $99 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative bg-slate-900/50 border border-slate-700 rounded-2xl p-6"
+            >
+              <div className="text-center">
+                <h4 className="font-semibold text-xl">{t('pricing.plans.basic.name')}</h4>
+                <div className="mt-2">
+                  <span className="text-3xl font-bold">$99</span>
+                  <span className="text-slate-400 text-sm">/month</span>
                 </div>
+                <p className="text-slate-400 text-sm mt-1">{t('pricing.plans.basic.subtitle')}</p>
+              </div>
 
-                <ul className="mt-6 space-y-3 text-slate-300 text-sm">
-                  {p.features.map((f, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+              <ul className="mt-6 space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.basic.features.engagements')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.basic.features.users')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.basic.features.aiCredits')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.basic.features.whiteLabel')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.basic.features.emailSupport')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.basic.features.standardTemplates')}
+                </li>
+              </ul>
 
-                <div className="mt-8">
-                  <button className={`w-full rounded-lg px-4 py-3 font-semibold transition ${
-                    p.popular
-                      ? 'bg-purple-600 hover:bg-purple-500 text-white'
-                      : 'bg-slate-800 hover:bg-slate-700 text-white'
-                  }`}>
-                    {p.cta}
-                  </button>
+              <div className="mt-8">
+                <button className="w-full bg-slate-800 hover:bg-slate-700 text-white rounded-lg px-4 py-3 font-semibold transition">
+                  {t('pricing.plans.basic.cta')}
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Professional Plan - $399 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative bg-slate-900/50 border border-slate-700 rounded-2xl p-6"
+            >
+              <div className="text-center">
+                <h4 className="font-semibold text-xl">{t('pricing.plans.professional.name')}</h4>
+                <div className="mt-2">
+                  <span className="text-3xl font-bold">$399</span>
+                  <span className="text-slate-400 text-sm">/month</span>
                 </div>
-              </motion.div>
-            ))}
+                <p className="text-slate-400 text-sm mt-1">{t('pricing.plans.professional.subtitle')}</p>
+              </div>
+
+              <ul className="mt-6 space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.engagements')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.users')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.aiCredits')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.prioritySupport')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.customTemplates')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.apiAccess')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.professional.features.whiteLabel')}
+                </li>
+              </ul>
+
+              <div className="mt-8">
+                <button className="w-full bg-slate-800 hover:bg-slate-700 text-white rounded-lg px-4 py-3 font-semibold transition">
+                  {t('pricing.plans.professional.cta')}
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Business Plan - $499 - Most Popular */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="relative bg-slate-900/50 border border-purple-500 ring-2 ring-purple-500/20 rounded-2xl p-6"
+            >
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Most Popular
+                </span>
+              </div>
+
+              <div className="text-center">
+                <h4 className="font-semibold text-xl">{t('pricing.plans.business.name')}</h4>
+                <div className="mt-2">
+                  <span className="text-3xl font-bold">$499</span>
+                  <span className="text-slate-400 text-sm">/month</span>
+                </div>
+                <p className="text-slate-400 text-sm mt-1">{t('pricing.plans.business.subtitle')}</p>
+              </div>
+
+              <ul className="mt-6 space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.business.features.engagements')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('pricing.plans.business.features.users')}
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Unlimited AI Credits
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  All Reporting Features
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  24/7 Phone Support
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  White-label Option
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Advanced Integrations
+                </li>
+              </ul>
+
+              <div className="mt-8">
+                <button className="w-full bg-purple-600 hover:bg-purple-500 text-white rounded-lg px-4 py-3 font-semibold transition">
+                  {t('pricing.plans.business.cta')}
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Enterprise Plan - $1500 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="relative bg-slate-900/50 border border-slate-700 rounded-2xl p-6"
+            >
+              <div className="text-center">
+                <h4 className="font-semibold text-xl">Enterprise</h4>
+                <div className="mt-2">
+                  <span className="text-3xl font-bold">$1500</span>
+                  <span className="text-slate-400 text-sm">/month</span>
+                </div>
+                <p className="text-slate-400 text-sm mt-1">Full tenant control</p>
+              </div>
+
+              <ul className="mt-6 space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Everything in Business
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Sell at your Own Price
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Custom Branding
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Full Tenant Management
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Dedicated CSM
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Custom SLA
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  On-premise Deployment
+                </li>
+              </ul>
+
+              <div className="mt-8">
+                <button className="w-full bg-slate-800 hover:bg-slate-700 text-white rounded-lg px-4 py-3 font-semibold transition">
+                  Contact Sales
+                </button>
+              </div>
+            </motion.div>
           </div>
 
           <div className="mt-12 text-center">
@@ -514,9 +972,9 @@ export default function NextecAsiaLanding() {
         {/* Contact */}
         <section id="contact" className="mt-16 bg-slate-900/30 border border-slate-700 rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold">Get Started Today</h3>
+            <h3 className="text-3xl font-bold">{t('trialCard.title')} Today</h3>
             <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
-              Ready to transform your penetration testing workflow? Contact our team or start your free trial.
+              {t('trialCard.subtitle')}
             </p>
           </div>
 
@@ -615,8 +1073,7 @@ export default function NextecAsiaLanding() {
             <div className="md:col-span-2">
               <h3 className="text-xl font-bold text-white mb-4">NextecAsia</h3>
               <p className="text-slate-400 mb-4 max-w-md">
-                Enterprise-grade pentest vulnerability management platform with advanced security features, 
-                multi-tenant architecture, and AI-powered insights.
+                {t('footer.description')}
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition">

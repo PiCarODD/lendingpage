@@ -1,0 +1,233 @@
+{
+  "hero": {
+    "title": "NextecAsia",
+    "description": "通过我们的企业级平台转变您的安全运营。比以往更快地发现、优先处理和修复漏洞。",
+    "mainHeading": "企业级漏洞管理",
+    "mainDescription": "专为现代安全团队设计的综合平台，提供先进的漏洞发现、评估和修复功能。",
+    "viewPricing": "查看定价",
+    "productFeatures": "产品功能",
+    "benefits": {
+      "enterprise": "企业级安全",
+      "threat": "威胁情报",
+      "reporting": "智能报告",
+      "support": "专家支持",
+      "compliance": "合规认证"
+    }
+  },
+  "nav": {
+    "product": "产品",
+    "pricing": "定价",
+    "contact": "联系我们",
+    "about": "关于我们",
+    "getStarted": "开始使用"
+  },
+  "trialCard": {
+    "title": "免费试用",
+    "subtitle": "14天免费试用",
+    "rating": "4.9/5",
+    "ratingText": "用户评分",
+    "emailPlaceholder": "工作邮箱",
+    "companyPlaceholder": "公司名称",
+    "startTrial": "开始免费试用",
+    "terms": "点击即表示您同意我们的服务条款和隐私政策"
+  },
+  "features": {
+    "title": "为什么选择NextecAsia？",
+    "subtitle": "通过尖端技术和成熟的专业知识转变您的安全运营",
+    "items": {
+      "multiTenant": {
+        "title": "多租户架构",
+        "description": "隔离的租户环境，具有专用管理控制和完整的数据分离。"
+      },
+      "accessControl": {
+        "title": "高级访问控制",
+        "description": "细粒度权限，具有基于角色的访问控制，适用于各种规模的团队。"
+      },
+      "intelligentInsights": {
+        "title": "智能洞察",
+        "description": "AI驱动的漏洞分析和修复指导，实现更快的威胁解决。"
+      },
+      "realTimeNotifications": {
+        "title": "实时通知",
+        "description": "通过即时警报和SLA违规监控保持对威胁的领先。"
+      },
+      "professionalReporting": {
+        "title": "专业报告",
+        "description": "生成全面的、合规就绪的报告，具有可自定义的模板和品牌。"
+      },
+      "riskAssessment": {
+        "title": "风险评估引擎",
+        "description": "自动风险评分，带有颜色编码的指标和实时漏洞跟踪。"
+      }
+    }
+  },
+  "showcase": {
+    "title": "查看NextecAsia的实际应用",
+    "subtitle": "专为现代安全团队设计的强大功能",
+    "riskAssessment": {
+      "title": "风险评估仪表板",
+      "description": "实时风险评分，带有颜色编码的严重性级别和趋势分析"
+    },
+    "multiTenant": {
+      "title": "多租户架构",
+      "description": "完整的租户隔离，具有专用管理和资源分配"
+    },
+    "aiPowered": {
+      "title": "AI驱动的协助",
+      "description": "多提供商AI支持，用于漏洞分析和修复指导"
+    }
+  },
+  "howItWorks": {
+    "title": "NextecAsia如何工作",
+    "subtitle": "从初始评估到最终报告交付的简化工作流程",
+    "steps": {
+      "setup": {
+        "title": "设置和配置",
+        "description": "创建租户，配置用户、角色和设置您的组织。"
+      },
+      "plan": {
+        "title": "规划和执行",
+        "description": "创建参与项目，分配团队并执行安全评估。"
+      },
+      "document": {
+        "title": "文档和报告",
+        "description": "记录发现的问题并进行详细分析，生成专业报告。"
+      },
+      "track": {
+        "title": "跟踪和交付",
+        "description": "监控进度，跟踪修复情况，并向利益相关者交付结果。"
+      }
+    }
+  },
+  "integrations": {
+    "title": "强大的集成",
+    "subtitle": "与您现有的工具和工作流程无缝连接",
+    "description": "需要自定义集成？我们的API优先架构使与任何工具连接变得容易。",
+    "viewApiDocs": "查看API文档",
+    "requestIntegration": "请求集成"
+  },
+  "pricing": {
+    "title": "选择您的计划",
+    "subtitle": "从我们灵活的定价计划开始。所有计划都包括14天免费试用。",
+    "footer": "所有计划都包括SSL加密、99.9%正常运行时间SLA和24/7支持。",
+    "contactUs": "联系我们",
+    "enterprisePricing": "获取自定义企业定价。",
+    "plans": {
+      "basic": {
+        "name": "基础版",
+        "subtitle": "适合初创企业",
+        "cta": "开始免费试用",
+        "features": {
+          "engagements": "5个参与项目/项目",
+          "users": "最多10个用户",
+          "aiCredits": "每月100个AI积分",
+          "whiteLabel": "白标选项",
+          "emailSupport": "邮件支持",
+          "standardTemplates": "标准模板"
+        }
+      },
+      "professional": {
+        "name": "专业版",
+        "subtitle": "成长中的安全团队",
+        "cta": "开始免费试用",
+        "features": {
+          "engagements": "25个参与项目/项目",
+          "users": "最多50个用户",
+          "aiCredits": "每月1,000个AI积分",
+          "prioritySupport": "优先支持",
+          "customTemplates": "自定义模板",
+          "apiAccess": "API访问",
+          "whiteLabel": "白标选项"
+        }
+      },
+      "business": {
+        "name": "商业版",
+        "subtitle": "企业就绪",
+        "cta": "开始免费试用",
+        "features": {
+          "engagements": "无限参与项目/项目",
+          "users": "无限用户",
+          "aiCredits": "无限AI积分",
+          "reportingFeatures": "所有报告功能",
+          "phoneSupport": "24/7电话支持",
+          "whiteLabel": "白标选项",
+          "advancedIntegrations": "高级集成"
+        }
+      },
+      "enterprise": {
+        "name": "企业版",
+        "subtitle": "完全租户控制",
+        "cta": "联系销售",
+        "features": {
+          "everything": "商业版的所有功能",
+          "sellPrice": "按您自己的价格销售",
+          "customBranding": "自定义品牌",
+          "tenantManagement": "完全租户管理",
+          "dedicatedCsm": "专属客户成功经理",
+          "customSla": "自定义SLA",
+          "onPremise": "本地部署",
+          "advancedSecurity": "高级安全功能",
+          "customIntegrations": "自定义集成"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "立即开始",
+    "subtitle": "准备转变您的渗透测试工作流程？联系我们的团队或开始您的免费试用。",
+    "email": {
+      "title": "邮件支持",
+      "responseTime": "4小时内回复"
+    },
+    "phone": {
+      "title": "电话支持",
+      "availability": "周一至周五上午9点至下午6点EST"
+    },
+    "headquarters": {
+      "title": "总部",
+      "region": "服务亚太地区"
+    },
+    "form": {
+      "fullName": "全名",
+      "company": "公司",
+      "workEmail": "工作邮箱",
+      "selectPlan": "选择计划兴趣",
+      "basicPlan": "基础版 - $99/月",
+      "professionalPlan": "专业版 - $299/月",
+      "businessPlan": "商业版 - $499/月",
+      "enterprisePlan": "企业版 - $1500/月",
+      "message": "告诉我们您的渗透测试需求...",
+      "sendMessage": "发送消息",
+      "responseTime": "我们将在营业时间内4小时内回复。提交即表示您同意我们的隐私政策。"
+    }
+  },
+  "footer": {
+    "description": "企业级渗透测试漏洞管理平台，具有先进的安全功能、多租户架构和AI驱动的洞察。",
+    "product": {
+      "title": "产品",
+      "features": "功能",
+      "pricing": "定价",
+      "security": "安全",
+      "integrations": "集成",
+      "api": "API"
+    },
+    "support": {
+      "title": "支持",
+      "contact": "联系我们",
+      "documentation": "文档",
+      "helpCenter": "帮助中心",
+      "systemStatus": "系统状态",
+      "community": "社区"
+    },
+    "copyright": "保留所有权利。",
+    "legal": {
+      "terms": "服务条款",
+      "privacy": "隐私政策",
+      "cookies": "Cookie政策"
+    }
+  },
+  "languageSelector": {
+    "selectLanguage": "选择语言",
+    "searchLanguages": "搜索语言..."
+  }
+}
