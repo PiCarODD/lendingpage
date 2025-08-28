@@ -90,9 +90,11 @@ export default function NextecAsiaLanding() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-400">
+                <span className="inline-flex items-center gap-2">✓ Own customizable report templates</span>
+                <span className="inline-flex items-center gap-2">✓ AI powered finding explanation and managment reporting</span>
                 <span className="inline-flex items-center gap-2">✓ Multi-tenant architecture</span>
-                <span className="inline-flex items-center gap-2">✓ Role-based access control</span>
                 <span className="inline-flex items-center gap-2">✓ Real-time notifications</span>
+                <span className="inline-flex items-center gap-2">✓ Good customer service</span>
               </div>
             </motion.div>
 
@@ -542,7 +544,7 @@ export default function NextecAsiaLanding() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white">Phone Support</h4>
-                    <p className="text-slate-400 mt-1">+1 (555) 123-4567</p>
+                    <p className="text-slate-400 mt-1">+(66) 0814535007</p>
                     <p className="text-slate-500 text-sm mt-1">Mon-Fri 9AM-6PM EST</p>
                   </div>
                 </div>
@@ -584,7 +586,7 @@ export default function NextecAsiaLanding() {
               <select className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:border-purple-500 focus:outline-none transition">
                 <option>Select plan interest</option>
                 <option>Basic - $99/month</option>
-                <option>Professional - $399/month</option>
+                <option>Professional - $299/month</option>
                 <option>Business - $499/month</option>
                 <option>Enterprise - $1500/month</option>
               </select>
@@ -790,7 +792,7 @@ const PLANS = [
       "5 Engagements/Projects",
       "Up to 10 Users",
       "100 AI Credits/month",
-      "Basic Reporting",
+      "White-label Option",
       "Email Support",
       "Standard Templates"
     ]
@@ -798,17 +800,17 @@ const PLANS = [
   {
     name: "Professional",
     subtitle: "Growing security teams",
-    price: "399",
+    price: "299",
     popular: false,
     cta: "Start Free Trial",
     features: [
       "25 Engagements/Projects",
       "Up to 50 Users",
       "1,000 AI Credits/month",
-      "Advanced Reporting",
       "Priority Support",
       "Custom Templates",
-      "API Access"
+      "API Access",
+      "White-label Option"
     ]
   },
   {
@@ -835,6 +837,8 @@ const PLANS = [
     cta: "Contact Sales",
     features: [
       "Everything in Business",
+      "Sell at your Own Price",
+      "Custom Branding",
       "Full Tenant Management",
       "Dedicated CSM",
       "Custom SLA",
