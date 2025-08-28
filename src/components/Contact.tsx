@@ -1,9 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { trackFormSubmission, trackContactMethod, trackPlanSelection } from '../utils/analytics';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  const [formData, setFormData] = useState({
+    fullName: '',
+    company: '',
+    email: '',
+    plan: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Track form submission
+    trackFormSubmission('contact_form', {
+      plan_selected: formData.plan,
+      has_company: !!formData.company,
+      message_length: formData.message.length
+    });
+
+    // Here you would typically send the form data to your backend
+    console.log('Form submitted:', formData);
+    
+    // Reset form
+    setFormData({
+      fullName: '',
+      company: '',
+      email: '',
+      plan: '',
+      message: ''
+    });
+  };
+
+  const handleContactMethodClick = (method: 'email' | 'phone' | 'location') => {
+    trackContactMethod(method);
+  };
+
+  const handlePlanChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const plan = e.target.value;
+    if (plan && plan !== t('contact.selectPlan')) {
+      trackPlanSelection(plan, plan);
+    }
+    handleInputChange(e);
+  };
 
   return (
     <section id="contact" className="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
@@ -50,7 +98,10 @@ const Contact: React.FC = () => {
 
             {/* Contact Methods */}
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
+              <div 
+                className="flex items-start gap-4 cursor-pointer hover:bg-slate-800/50 p-3 rounded-lg transition-colors"
+                onClick={() => handleContactMethodClick('email')}
+              >
                 <div className="w-12 h-12 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -63,7 +114,10 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div 
+                className="flex items-start gap-4 cursor-pointer hover:bg-slate-800/50 p-3 rounded-lg transition-colors"
+                onClick={() => handleContactMethodClick('phone')}
+              >
                 <div className="w-12 h-12 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -76,7 +130,10 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div 
+                className="flex items-start gap-4 cursor-pointer hover:bg-slate-800/50 p-3 rounded-lg transition-colors"
+                onClick={() => handleContactMethodClick('location')}
+              >
                 <div className="w-12 h-12 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -98,25 +155,41 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form className="space-y-6">
+            <form onSubmit={handleFormSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
                   placeholder={t('contact.fullName')}
                   className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:border-purple-500 focus:outline-none transition"
+                  required
                 />
                 <input
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
                   placeholder={t('contact.company')}
                   className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:border-purple-500 focus:outline-none transition"
                 />
               </div>
 
               <input
-                placeholder={t('contact.workEmail')}
+                name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder={t('contact.workEmail')}
                 className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:border-purple-500 focus:outline-none transition"
+                required
               />
 
-              <select className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:border-purple-500 focus:outline-none transition">
+              <select 
+                name="plan"
+                value={formData.plan}
+                onChange={handlePlanChange}
+                className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:border-purple-500 focus:outline-none transition"
+              >
                 <option>{t('contact.selectPlan')}</option>
                 <option>Basic - $99/month</option>
                 <option>Professional - $299/month</option>
@@ -125,12 +198,17 @@ const Contact: React.FC = () => {
               </select>
 
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 placeholder={t('contact.tellUsAbout')}
                 className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500 transition h-32 resize-none"
+                required
               />
 
               <div className="flex flex-col gap-4">
                 <motion.button
+                  type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full rounded-lg bg-purple-600 px-6 py-3 font-semibold text-white hover:bg-purple-500 transition-all duration-300 shadow-lg hover:shadow-xl"

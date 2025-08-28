@@ -126,6 +126,14 @@ VITE_GA_TRACKING_ID=your-ga-id
 
 # Optional: API endpoints
 VITE_API_URL=https://api.nextecasia.com
+
+# Optional: Vercel Speed Insights configuration
+VITE_SPEED_INSIGHTS_ENABLED=true
+VITE_SPEED_INSIGHTS_DEBUG=false
+
+# Optional: Vercel Analytics configuration
+VITE_ANALYTICS_ENABLED=true
+VITE_ANALYTICS_DEBUG=false
 ```
 
 ### Custom Domain
@@ -142,6 +150,25 @@ Update the following files when deploying to a custom domain:
 - **Bundle Size**: ~150KB gzipped
 - **First Contentful Paint**: <1.5s
 - **Time to Interactive**: <3s
+
+### Vercel Speed Insights & Analytics
+
+This project includes both Vercel Speed Insights and Analytics for comprehensive monitoring:
+
+#### Speed Insights
+- **Automatic Core Web Vitals tracking** (LCP, FID, CLS)
+- **Real-time performance metrics** in your Vercel dashboard
+- **User experience insights** across different devices and networks
+- **Performance regression detection** with alerts
+
+#### Analytics
+- **Automatic page view tracking** across your application
+- **User interaction metrics** and engagement data
+- **Custom event tracking** capabilities
+- **Real-time visitor analytics** in your Vercel dashboard
+- **Privacy-focused** with GDPR compliance
+
+Both components are automatically included in the app and require no additional configuration when deployed to Vercel.
 
 ## 🎨 Customization
 
