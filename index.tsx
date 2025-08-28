@@ -92,6 +92,8 @@ export default function NextecAsiaLanding() {
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-400">
                 <span className="inline-flex items-center gap-2">✓ Multi-tenant architecture</span>
                 <span className="inline-flex items-center gap-2">✓ Role-based access control</span>
+                <span className="inline-flex items-center gap-2">✓ Customizable report templates</span>
+                <span className="inline-flex items-center gap-2">✓ AI powered finding explanation and management reporting</span>
                 <span className="inline-flex items-center gap-2">✓ Real-time notifications</span>
               </div>
             </motion.div>
@@ -584,7 +586,7 @@ export default function NextecAsiaLanding() {
               <select className="w-full bg-slate-900/40 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:border-purple-500 focus:outline-none transition">
                 <option>Select plan interest</option>
                 <option>Basic - $99/month</option>
-                <option>Professional - $399/month</option>
+                <option>Professional - $299/month</option>
                 <option>Business - $499/month</option>
                 <option>Enterprise - $1500/month</option>
               </select>
@@ -790,7 +792,8 @@ const PLANS = [
       "5 Engagements/Projects",
       "Up to 10 Users",
       "100 AI Credits/month",
-      "Basic Reporting",
+      "Custom Templates",
+      "White-label Option",
       "Email Support",
       "Standard Templates"
     ]
@@ -798,7 +801,7 @@ const PLANS = [
   {
     name: "Professional",
     subtitle: "Growing security teams",
-    price: "399",
+    price: "299",
     popular: false,
     cta: "Start Free Trial",
     features: [
@@ -808,6 +811,7 @@ const PLANS = [
       "Advanced Reporting",
       "Priority Support",
       "Custom Templates",
+      "White-label Option",
       "API Access"
     ]
   },
@@ -835,12 +839,11 @@ const PLANS = [
     cta: "Contact Sales",
     features: [
       "Everything in Business",
+      "Custom pricing option",
       "Full Tenant Management",
       "Dedicated CSM",
       "Custom SLA",
       "On-premise Deployment",
-      "Advanced Security Features",
-      "Custom Integrations"
     ]
   }
 ];
