@@ -1,235 +1,149 @@
 {
   "hero": {
     "title": "NextecAsia",
-    "description": "Bảo vệ doanh nghiệp của bạn với giải pháp quản lý lỗ hổng bảo mật toàn diện, được hỗ trợ bởi AI và thiết kế cho kiến trúc đa người thuê.",
-    "mainHeading": "NextecAsia Nền tảng Quản lý Lỗ hổng Bảo mật",
-    "mainDescription": "Bảo vệ doanh nghiệp của bạn với giải pháp quản lý lỗ hổng bảo mật toàn diện, được hỗ trợ bởi AI và thiết kế cho kiến trúc đa người thuê.",
-    "viewPricing": "Xem Giá",
-    "productFeatures": "Tính năng Sản phẩm",
-    "benefits": {
-      "title": "Tại sao chọn NextecAsia?",
-      "subtitle": "Giải pháp bảo mật toàn diện cho doanh nghiệp hiện đại",
-      "benefit1": "Quản lý lỗ hổng bảo mật toàn diện với phát hiện tự động",
-      "benefit2": "Phân tích rủi ro thông minh được hỗ trợ bởi AI",
-      "benefit3": "Kiến trúc đa người thuê an toàn và có thể mở rộng",
-      "benefit4": "Tích hợp liền mạch với hệ thống hiện có",
-      "benefit5": "Báo cáo tuân thủ và phân tích chi tiết"
-    }
+    "subtitle": "Nền tảng Nextec-RiskLens",
+    "description": "Một nền tảng toàn diện cấp doanh nghiệp để quản lý các dự án kiểm thử xâm nhập, phát hiện và báo cáo với các tính năng bảo mật tiên tiến và kiến trúc đa người thuê",
+    "startTrial": "Bắt đầu dùng thử miễn phí",
+    "viewDemo": "Xem demo",
+    "trustedBy": "Được tin tưởng bởi các nhóm bảo mật trên toàn thế giới"
   },
   "nav": {
-    "product": "Sản phẩm",
+    "features": "Tính năng",
+    "howItWorks": "Cách hoạt động",
     "pricing": "Giá cả",
-    "contact": "Liên hệ",
-    "about": "Về chúng tôi",
-    "getStarted": "Bắt đầu"
-  },
-  "trialCard": {
-    "title": "Dùng thử miễn phí 14 ngày",
-    "subtitle": "Không cần thẻ tín dụng • Hủy bất cứ lúc nào",
-    "rating": "4.9/5",
-    "ratingText": "từ hơn 500+ khách hàng",
-    "emailPlaceholder": "Email công việc",
-    "companyPlaceholder": "Tên công ty",
-    "startTrial": "Bắt đầu dùng thử",
-    "terms": "Bằng cách bắt đầu dùng thử, bạn đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật của chúng tôi."
+    "integrations": "Tích hợp",
+    "contact": "Liên hệ"
   },
   "features": {
-    "title": "Tính năng Chính",
-    "subtitle": "Mọi thứ bạn cần để bảo vệ doanh nghiệp của mình",
-    "items": {
-      "multiTenant": {
-        "title": "Kiến trúc Đa người thuê",
-        "description": "Môi trường tenant cô lập với điều khiển quản lý chuyên dụng và phân tách dữ liệu hoàn toàn."
-      },
-      "accessControl": {
-        "title": "Kiểm soát Truy cập Nâng cao",
-        "description": "Quyền hạn chi tiết với kiểm soát truy cập dựa trên vai trò cho các nhóm có mọi kích thước."
-      },
-      "intelligentInsights": {
-        "title": "Thông tin Chi tiết Thông minh",
-        "description": "Phân tích lỗ hổng được hỗ trợ bởi AI và hướng dẫn khắc phục để giải quyết mối đe dọa nhanh hơn."
-      },
-      "realTimeNotifications": {
-        "title": "Thông báo Thời gian thực",
-        "description": "Luôn dẫn trước các mối đe dọa với cảnh báo tức thì và giám sát vi phạm SLA."
-      },
-      "professionalReporting": {
-        "title": "Báo cáo Chuyên nghiệp",
-        "description": "Tạo báo cáo toàn diện, sẵn sàng tuân thủ với các mẫu và thương hiệu có thể tùy chỉnh."
-      },
-      "riskAssessment": {
-        "title": "Công cụ Đánh giá Rủi ro",
-        "description": "Chấm điểm rủi ro tự động với các chỉ số được mã hóa màu và theo dõi lỗ hổng thời gian thực."
-      }
-    }
-  },
-  "showcase": {
-    "title": "Xem NextecAsia hoạt động",
-    "subtitle": "Khám phá cách nền tảng của chúng tôi giúp bảo vệ doanh nghiệp của bạn",
-    "riskAssessment": {
-      "title": "Đánh giá Rủi ro Thông minh",
-      "description": "Phân tích rủi ro bảo mật tự động với AI tiên tiến để xác định và ưu tiên các mối đe dọa."
-    },
+    "title": "Tại sao chọn Nextec-RiskLens?",
+    "subtitle": "Chuyển đổi hoạt động bảo mật của bạn với công nghệ tiên tiến và chuyên môn đã được chứng minh",
     "multiTenant": {
-      "title": "Kiến trúc Đa người thuê",
-      "description": "Quản lý nhiều tổ chức từ một nền tảng duy nhất với cô lập dữ liệu hoàn toàn."
+      "title": "Kiến trúc đa người thuê",
+      "description": "Môi trường người thuê được cô lập với các điều khiển quản lý chuyên dụng và phân tách dữ liệu hoàn toàn để đảm bảo bảo mật doanh nghiệp"
     },
-    "aiPowered": {
-      "title": "Phân tích được Hỗ trợ bởi AI",
-      "description": "Leverage machine learning để phát hiện mối đe dọa và tối ưu hóa chiến lược bảo mật."
+    "engagementManagement": {
+      "title": "Quản lý tham gia",
+      "description": "Quản lý dự án và dự án con toàn diện với chấm điểm rủi ro và theo dõi lỗ hổng"
+    },
+    "aiFindings": {
+      "title": "Phát hiện được hỗ trợ bởi AI",
+      "description": "Hỗ trợ AI đa nhà cung cấp (OpenAI, Claude, Gemini, DeepSeek) để phân tích lỗ hổng và hướng dẫn khắc phục"
+    },
+    "professionalReporting": {
+      "title": "Báo cáo chuyên nghiệp",
+      "description": "Tạo báo cáo dựa trên mẫu với chỉnh sửa văn bản phong phú, xuất PDF và tài liệu sẵn sàng tuân thủ"
+    },
+    "realTimeNotifications": {
+      "title": "Thông báo thời gian thực",
+      "description": "Thông báo trực tiếp được hỗ trợ bởi WebSocket, giám sát vi phạm SLA và ghi nhật ký kiểm toán toàn diện"
     }
   },
   "howItWorks": {
-    "title": "Cách NextecAsia hoạt động",
-    "subtitle": "Quy trình đơn giản 3 bước để bảo mật doanh nghiệp của bạn",
-    "steps": {
-      "setup": {
-        "title": "Thiết lập & Cấu hình",
-        "description": "Tạo tenant, cấu hình người dùng, vai trò và thiết lập tổ chức của bạn."
-      },
-      "plan": {
-        "title": "Lập kế hoạch & Thực hiện",
-        "description": "Tạo các dự án tham gia, phân công nhóm và thực hiện đánh giá bảo mật."
-      },
-      "document": {
-        "title": "Tài liệu & Báo cáo",
-        "description": "Ghi lại các phát hiện với phân tích chi tiết và tạo báo cáo chuyên nghiệp."
-      },
-      "track": {
-        "title": "Theo dõi & Giao hàng",
-        "description": "Giám sát tiến độ, theo dõi khắc phục và giao kết quả cho các bên liên quan."
-      }
+    "title": "Nextec-RiskLens hoạt động như thế nào",
+    "subtitle": "Quy trình làm việc được tối ưu hóa từ đánh giá ban đầu đến giao báo cáo cuối cùng",
+    "step1": {
+      "title": "Thiết lập và cấu hình",
+      "description": "Tạo người thuê, cấu hình người dùng, vai trò và thiết lập tổ chức của bạn với cô lập đa người thuê"
+    },
+    "step2": {
+      "title": "Lập kế hoạch và thực hiện",
+      "description": "Tạo các tham gia, phân công nhóm và thực hiện đánh giá bảo mật với tích hợp phương pháp"
+    },
+    "step3": {
+      "title": "Tài liệu và báo cáo",
+      "description": "Ghi lại các phát hiện với phân tích được hỗ trợ bởi AI và tạo báo cáo chuyên nghiệp, sẵn sàng tuân thủ"
+    },
+    "step4": {
+      "title": "Theo dõi và giao hàng",
+      "description": "Giám sát tiến độ, theo dõi khắc phục và giao kết quả cho các bên liên quan với cập nhật thời gian thực"
     }
   },
   "integrations": {
-    "title": "Tích hợp",
-    "subtitle": "Kết nối với các công cụ và hệ thống bạn đã sử dụng",
-    "description": "NextecAsia tích hợp liền mạch với các nền tảng bảo mật, công cụ DevOps và hệ thống quản lý phổ biến nhất.",
-    "viewApiDocs": "Xem Tài liệu API",
-    "requestIntegration": "Yêu cầu Tích hợp"
+    "title": "Tích hợp mạnh mẽ",
+    "subtitle": "Kết nối liền mạch với các công cụ và quy trình làm việc hiện có của bạn"
   },
   "pricing": {
-    "title": "Giá cả",
-    "subtitle": "Chọn kế hoạch phù hợp với nhu cầu của bạn",
-    "footer": "Tất cả các kế hoạch đều bao gồm hỗ trợ 24/7 và cập nhật bảo mật tự động.",
-    "contactUs": "Liên hệ với chúng tôi",
-    "enterprisePricing": "để biết giá doanh nghiệp tùy chỉnh.",
-    "plans": {
-      "basic": {
-        "name": "Cơ bản",
-        "subtitle": "Hoàn hảo cho startup",
-        "cta": "Bắt đầu dùng thử miễn phí",
-        "features": {
-          "engagements": "5 Dự án/Engagement",
-          "users": "Tối đa 10 người dùng",
-          "aiCredits": "100 AI Credits/tháng",
-          "whiteLabel": "Tùy chọn White-label",
-          "emailSupport": "Hỗ trợ qua email",
-          "standardTemplates": "Mẫu tiêu chuẩn"
-        }
-      },
-      "professional": {
-        "name": "Chuyên nghiệp",
-        "subtitle": "Đội ngũ bảo mật đang phát triển",
-        "cta": "Bắt đầu dùng thử miễn phí",
-        "features": {
-          "engagements": "25 Dự án/Engagement",
-          "users": "Tối đa 50 người dùng",
-          "aiCredits": "1,000 AI Credits/tháng",
-          "prioritySupport": "Hỗ trợ ưu tiên",
-          "customTemplates": "Mẫu tùy chỉnh",
-          "apiAccess": "Truy cập API",
-          "whiteLabel": "Tùy chọn White-label"
-        }
-      },
-      "business": {
-        "name": "Doanh nghiệp",
-        "subtitle": "Sẵn sàng cho doanh nghiệp",
-        "cta": "Bắt đầu dùng thử miễn phí",
-        "features": {
-          "engagements": "Không giới hạn Dự án/Engagement",
-          "users": "Không giới hạn người dùng",
-          "aiCredits": "Không giới hạn AI Credits",
-          "reportingFeatures": "Tất cả tính năng báo cáo",
-          "phoneSupport": "Hỗ trợ qua điện thoại 24/7",
-          "whiteLabel": "Tùy chọn White-label",
-          "advancedIntegrations": "Tích hợp nâng cao"
-        }
-      },
-      "enterprise": {
-        "name": "Doanh nghiệp lớn",
-        "subtitle": "Kiểm soát tenant hoàn toàn",
-        "cta": "Liên hệ bán hàng",
-        "features": {
-          "everything": "Tất cả trong Doanh nghiệp",
-          "sellPrice": "Bán với giá của riêng bạn",
-          "customBranding": "Thương hiệu tùy chỉnh",
-          "tenantManagement": "Quản lý tenant hoàn toàn",
-          "dedicatedCsm": "CSM chuyên dụng",
-          "customSla": "SLA tùy chỉnh",
-          "onPremise": "Triển khai tại chỗ",
-          "advancedSecurity": "Tính năng bảo mật nâng cao",
-          "customIntegrations": "Tích hợp tùy chỉnh"
-        }
-      }
-    }
+    "title": "Giá cả đơn giản, minh bạch",
+    "subtitle": "Chọn kế hoạch phù hợp với nhu cầu bảo mật của bạn",
+    "basic": {
+      "name": "Cơ bản",
+      "subtitle": "Hoàn hảo cho startup",
+      "price": "99",
+      "period": "/tháng"
+    },
+    "professional": {
+      "name": "Chuyên nghiệp",
+      "subtitle": "Các nhóm bảo mật đang phát triển",
+      "price": "299",
+      "period": "/tháng"
+    },
+    "business": {
+      "name": "Doanh nghiệp",
+      "subtitle": "Bảo mật doanh nghiệp",
+      "price": "499",
+      "period": "/tháng"
+    },
+    "enterprise": {
+      "name": "Doanh nghiệp lớn",
+      "subtitle": "Quản lý người thuê hoàn toàn",
+      "price": "1499",
+      "period": "/tháng"
+    },
+    "mostPopular": "Phổ biến nhất",
+    "startTrial": "Bắt đầu dùng thử miễn phí",
+    "contactSales": "Liên hệ bán hàng",
+    "freeTrialNote": "Tất cả các kế hoạch đều bao gồm dùng thử miễn phí 14 ngày. Không cần thẻ tín dụng."
   },
   "contact": {
-    "title": "Liên hệ",
-    "subtitle": "Sẵn sàng bắt đầu? Hãy để chúng tôi giúp bạn.",
-    "email": {
-      "title": "Email",
-      "responseTime": "Phản hồi trong vòng 24 giờ"
-    },
-    "phone": {
-      "title": "Điện thoại",
-      "availability": "Thứ 2 - Thứ 6, 9:00 sáng - 6:00 chiều GMT+7"
-    },
-    "headquarters": {
-      "title": "Trụ sở chính",
-      "region": "Singapore, Châu Á"
-    },
-    "form": {
-      "fullName": "Họ và tên",
-      "company": "Công ty",
-      "workEmail": "Email công việc",
-      "selectPlan": "Chọn kế hoạch",
-      "basicPlan": "Kế hoạch Cơ bản ($99)",
-      "professionalPlan": "Kế hoạch Chuyên nghiệp ($399)",
-      "businessPlan": "Kế hoạch Doanh nghiệp ($499)",
-      "enterprisePlan": "Kế hoạch Doanh nghiệp ($1500)",
-      "message": "Tin nhắn",
-      "sendMessage": "Gửi tin nhắn",
-      "responseTime": "Chúng tôi sẽ phản hồi trong vòng 24 giờ"
-    }
+    "title": "Bắt đầu ngay hôm nay",
+    "subtitle": "Sẵn sàng chuyển đổi quy trình làm việc kiểm thử xâm nhập của bạn? Liên hệ với nhóm của chúng tôi hoặc bắt đầu dùng thử miễn phí.",
+    "getInTouch": "Liên hệ với chúng tôi",
+    "description": "Sẵn sàng bảo mật cơ sở hạ tầng của bạn? Nhóm chuyên gia bảo mật của chúng tôi sẵn sàng giúp bạn bắt đầu với NextecAsia.",
+    "emailSupport": "Hỗ trợ email",
+    "phoneSupport": "Hỗ trợ điện thoại",
+    "globalPresence": "Hiện diện toàn cầu",
+    "servingWorldwide": "Phục vụ các nhóm bảo mật trên toàn thế giới",
+    "multiTenantPlatform": "Nền tảng đám mây đa người thuê",
+    "responseTime": "Phản hồi trong vòng 4 giờ",
+    "businessHours": "Thứ 2-Thứ 6 9AM-6PM EST",
+    "fullName": "Họ và tên",
+    "company": "Công ty",
+    "workEmail": "Email công việc",
+    "selectPlan": "Chọn kế hoạch quan tâm",
+    "tellUsAbout": "Hãy cho chúng tôi biết về nhu cầu kiểm thử xâm nhập của bạn...",
+    "sendMessage": "Gửi tin nhắn",
+    "responseNote": "Chúng tôi sẽ phản hồi trong vòng 4 giờ trong giờ làm việc. Bằng việc gửi, bạn đồng ý với chính sách bảo mật của chúng tôi."
   },
   "footer": {
-    "description": "NextecAsia cung cấp giải pháp quản lý lỗ hổng bảo mật toàn diện cho doanh nghiệp hiện đại.",
+    "description": "Một nền tảng toàn diện cấp doanh nghiệp để quản lý các dự án kiểm thử xâm nhập, phát hiện và báo cáo với các tính năng bảo mật tiên tiến và kiến trúc đa người thuê.",
     "product": {
       "title": "Sản phẩm",
       "features": "Tính năng",
       "pricing": "Giá cả",
-      "security": "Bảo mật",
       "integrations": "Tích hợp",
-      "api": "API"
+      "api": "API",
+      "documentation": "Tài liệu"
     },
-    "support": {
-      "title": "Hỗ trợ",
+    "company": {
+      "title": "Công ty",
+      "about": "Về chúng tôi",
+      "blog": "Blog",
       "contact": "Liên hệ",
-      "documentation": "Tài liệu",
-      "helpCenter": "Trung tâm Trợ giúp",
-      "systemStatus": "Trạng thái Hệ thống",
-      "community": "Cộng đồng"
+      "careers": "Tuyển dụng",
+      "support": "Hỗ trợ"
     },
-    "copyright": "© 2024 NextecAsia. Tất cả các quyền được bảo lưu.",
+    "copyright": "© 2025 NextecAsia. Đã đăng ký bản quyền.",
     "legal": {
-      "terms": "Điều khoản",
-      "privacy": "Bảo mật",
-      "cookies": "Cookie"
+      "terms": "Điều khoản dịch vụ",
+      "privacy": "Chính sách bảo mật",
+      "cookies": "Chính sách cookie"
     }
   },
   "languageSelector": {
     "selectLanguage": "Chọn ngôn ngữ",
-    "searchLanguages": "Tìm kiếm ngôn ngữ"
+    "searchLanguages": "Tìm kiếm ngôn ngữ...",
+    "popular": "Ngôn ngữ phổ biến",
+    "allLanguages": "Tất cả ngôn ngữ",
+    "search": "Tìm kiếm ngôn ngữ..."
   }
 }

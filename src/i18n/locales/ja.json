@@ -1,225 +1,138 @@
 {
   "hero": {
     "title": "NextecAsia",
-    "description": "エンタープライズグレードのプラットフォームでセキュリティ運用を変革しましょう。脆弱性をこれまで以上に迅速に発見、優先順位付け、修正できます。",
-    "mainHeading": "エンタープライズ脆弱性管理",
-    "mainDescription": "現代のセキュリティチーム向けに設計された包括的プラットフォームで、高度な脆弱性発見、評価、修正機能を提供します。",
-    "viewPricing": "料金を見る",
-    "productFeatures": "製品機能",
-    "benefits": {
-      "enterprise": "エンタープライズセキュリティ",
-      "threat": "脅威インテリジェンス",
-      "reporting": "スマートレポート",
-      "support": "エキスパートサポート",
-      "compliance": "コンプライアンス対応"
-    }
+    "subtitle": "Nextec-RiskLens プラットフォーム",
+    "description": "ペネトレーションテストプロジェクト、発見事項、レポートを管理するための包括的なエンタープライズグレードプラットフォーム。高度なセキュリティ機能とマルチテナントアーキテクチャを備えています。",
+    "startTrial": "無料トライアルを開始",
+    "viewDemo": "デモを見る",
+    "trustedBy": "世界中のセキュリティチームに信頼されています"
   },
   "nav": {
-    "product": "製品",
+    "features": "機能",
+    "howItWorks": "仕組み",
     "pricing": "料金",
-    "contact": "お問い合わせ",
-    "about": "会社概要",
-    "getStarted": "始める"
-  },
-  "trialCard": {
-    "title": "無料トライアル",
-    "subtitle": "14日間の無料トライアル",
-    "rating": "4.9/5",
-    "ratingText": "ユーザー評価",
-    "emailPlaceholder": "仕事用メール",
-    "companyPlaceholder": "会社名",
-    "startTrial": "無料トライアルを開始",
-    "terms": "クリックすることで、利用規約とプライバシーポリシーに同意したことになります"
+    "integrations": "統合",
+    "contact": "お問い合わせ"
   },
   "features": {
-    "title": "なぜNextecAsiaを選ぶのか？",
+    "title": "なぜ Nextec-RiskLens を選ぶのか？",
     "subtitle": "最先端技術と実証された専門知識でセキュリティ運用を変革",
-    "items": {
-      "multiTenant": {
-        "title": "マルチテナントアーキテクチャ",
-        "description": "専用管理制御と完全なデータ分離を備えた分離されたテナント環境。"
-      },
-      "accessControl": {
-        "title": "高度なアクセス制御",
-        "description": "あらゆるサイズのチーム向けのロールベースアクセス制御による細かい権限。"
-      },
-      "intelligentInsights": {
-        "title": "インテリジェントインサイト",
-        "description": "より迅速な脅威解決のためのAI駆動脆弱性分析と修正ガイダンス。"
-      },
-      "realTimeNotifications": {
-        "title": "リアルタイム通知",
-        "description": "インスタントアラートとSLA違反監視で脅威に先んじる。"
-      },
-      "professionalReporting": {
-        "title": "プロフェッショナルレポート",
-        "description": "カスタマイズ可能なテンプレートとブランディングで包括的でコンプライアンス対応のレポートを生成。"
-      },
-      "riskAssessment": {
-        "title": "リスク評価エンジン",
-        "description": "色分けされたインジケーターとリアルタイム脆弱性追跡による自動リスクスコアリング。"
-      }
-    }
-  },
-  "showcase": {
-    "title": "NextecAsiaの動作を見る",
-    "subtitle": "現代のセキュリティチーム向けに設計された強力な機能",
-    "riskAssessment": {
-      "title": "リスク評価ダッシュボード",
-      "description": "色分けされた深刻度レベルとトレンド分析によるリアルタイムリスクスコアリング"
-    },
     "multiTenant": {
       "title": "マルチテナントアーキテクチャ",
-      "description": "専用管理とリソース割り当てによる完全なテナント分離"
+      "description": "専用管理制御と完全なデータ分離を備えた分離されたテナント環境。エンタープライズセキュリティを確保します。"
     },
-    "aiPowered": {
-      "title": "AI駆動アシスタンス",
-      "description": "脆弱性分析と修正ガイダンスのためのマルチプロバイダーAIサポート"
+    "engagementManagement": {
+      "title": "エンゲージメント管理",
+      "description": "リスクスコアリングと脆弱性追跡を備えた包括的なプロジェクトおよびサブプロジェクト管理"
+    },
+    "aiFindings": {
+      "title": "AI駆動の発見",
+      "description": "脆弱性分析と修正ガイダンスのためのマルチプロバイダーAIサポート（OpenAI、Claude、Gemini、DeepSeek）"
+    },
+    "professionalReporting": {
+      "title": "プロフェッショナルレポート",
+      "description": "リッチテキスト編集、PDFエクスポート、コンプライアンス対応ドキュメントを備えたテンプレートベースのレポート作成"
+    },
+    "realTimeNotifications": {
+      "title": "リアルタイム通知",
+      "description": "WebSocket駆動のライブ通知、SLA違反監視、包括的な監査ログ"
     }
   },
   "howItWorks": {
-    "title": "NextecAsiaの仕組み",
+    "title": "Nextec-RiskLens の仕組み",
     "subtitle": "初期評価から最終レポート配信までの効率化されたワークフロー",
-    "steps": {
-      "setup": {
-        "title": "セットアップと設定",
-        "description": "テナントを作成し、ユーザー、ロールを設定し、組織をセットアップします。"
-      },
-      "plan": {
-        "title": "計画と実行",
-        "description": "エンゲージメントを作成し、チームを割り当て、セキュリティ評価を実行します。"
-      },
-      "document": {
-        "title": "文書化とレポート",
-        "description": "詳細な分析で発見事項を記録し、専門的なレポートを生成します。"
-      },
-      "track": {
-        "title": "追跡と配信",
-        "description": "進捗を監視し、修正を追跡し、ステークホルダーに結果を配信します。"
-      }
+    "step1": {
+      "title": "セットアップと設定",
+      "description": "テナントを作成し、ユーザー、ロールを設定し、マルチテナント分離で組織をセットアップします"
+    },
+    "step2": {
+      "title": "計画と実行",
+      "description": "エンゲージメントを作成し、チームを割り当て、メソドロジー統合でセキュリティ評価を実行します"
+    },
+    "step3": {
+      "title": "文書化とレポート",
+      "description": "AI駆動分析で発見事項を記録し、プロフェッショナルでコンプライアンス対応のレポートを生成します"
+    },
+    "step4": {
+      "title": "追跡と配信",
+      "description": "進捗を監視し、修正を追跡し、リアルタイム更新でステークホルダーに結果を配信します"
     }
   },
   "integrations": {
     "title": "強力な統合",
-    "subtitle": "既存のツールとワークフローとシームレスに接続",
-    "description": "カスタム統合が必要ですか？私たちのAPIファーストアーキテクチャにより、あらゆるツールとの接続が簡単になります。",
-    "viewApiDocs": "APIドキュメントを見る",
-    "requestIntegration": "統合をリクエスト"
+    "subtitle": "既存のツールとワークフローとシームレスに接続"
   },
   "pricing": {
-    "title": "プランを選択",
-    "subtitle": "柔軟な料金プランから始めましょう。すべてのプランに14日間の無料トライアルが含まれています。",
-    "footer": "すべてのプランにSSL暗号化、99.9%アップタイムSLA、24/7サポートが含まれています。",
-    "contactUs": "お問い合わせ",
-    "enterprisePricing": "カスタムエンタープライズ料金について。",
-    "plans": {
-      "basic": {
-        "name": "ベーシック",
-        "subtitle": "スタートアップに最適",
-        "cta": "無料トライアルを開始",
-        "features": {
-          "engagements": "5エンゲージメント/プロジェクト",
-          "users": "最大10ユーザー",
-          "aiCredits": "100 AIクレジット/月",
-          "whiteLabel": "ホワイトラベルオプション",
-          "emailSupport": "メールサポート",
-          "standardTemplates": "標準テンプレート"
-        }
-      },
-      "professional": {
-        "name": "プロフェッショナル",
-        "subtitle": "セキュリティチームに最適",
-        "cta": "無料トライアルを開始",
-        "features": {
-          "engagements": "15エンゲージメント/プロジェクト",
-          "users": "最大25ユーザー",
-          "aiCredits": "500 AIクレジット/月",
-          "prioritySupport": "優先サポート",
-          "customTemplates": "カスタムテンプレート",
-          "apiAccess": "APIアクセス",
-          "whiteLabel": "ホワイトラベル"
-        }
-      },
-      "business": {
-        "name": "ビジネス",
-        "subtitle": "成長する組織向け",
-        "cta": "無料トライアルを開始",
-        "features": {
-          "engagements": "無制限エンゲージメント/プロジェクト",
-          "users": "無制限ユーザー",
-          "aiCredits": "無制限AIクレジット",
-          "reportingFeatures": "高度なレポート機能",
-          "phoneSupport": "24/7電話サポート",
-          "whiteLabel": "ホワイトラベル",
-          "advancedIntegrations": "高度な統合"
-        }
-      },
-      "enterprise": {
-        "name": "エンタープライズ",
-        "subtitle": "大企業向けの完全ソリューション",
-        "cta": "営業にお問い合わせ",
-        "features": {
-          "everything": "ビジネスプランのすべて",
-          "sellPrice": "カスタマイズ可能な販売価格",
-          "customBranding": "カスタムブランディング",
-          "tenantManagement": "完全なテナント管理",
-          "dedicatedCsm": "専用CSM",
-          "customSla": "カスタムSLA",
-          "onPremise": "オンプレミスオプション",
-          "advancedSecurity": "高度なセキュリティ",
-          "customIntegrations": "カスタム統合"
-        }
-      }
-    }
+    "title": "シンプルで透明な料金",
+    "subtitle": "セキュリティニーズに合ったプランを選択",
+    "basic": {
+      "name": "ベーシック",
+      "subtitle": "スタートアップに最適",
+      "price": "99",
+      "period": "/月"
+    },
+    "professional": {
+      "name": "プロフェッショナル",
+      "subtitle": "成長するセキュリティチーム",
+      "price": "299",
+      "period": "/月"
+    },
+    "business": {
+      "name": "ビジネス",
+      "subtitle": "エンタープライズセキュリティ",
+      "price": "499",
+      "period": "/月"
+    },
+    "enterprise": {
+      "name": "エンタープライズ",
+      "subtitle": "完全なテナント管理",
+      "price": "1499",
+      "period": "/月"
+    },
+    "mostPopular": "最も人気",
+    "startTrial": "無料トライアルを開始",
+    "contactSales": "営業にお問い合わせ",
+    "freeTrialNote": "すべてのプランに14日間の無料トライアルが含まれています。クレジットカードは不要です。"
   },
   "contact": {
     "title": "今日から始めましょう",
     "subtitle": "ペネトレーションテストワークフローを変革する準備はできていますか？チームにお問い合わせいただくか、無料トライアルを開始してください。",
-    "email": {
-      "title": "メールサポート",
-      "responseTime": "4時間以内に返信"
-    },
-    "phone": {
-      "title": "電話サポート",
-      "availability": "月-金 9AM-6PM EST"
-    },
-    "headquarters": {
-      "title": "本社",
-      "region": "APAC地域をサービス"
-    },
-    "form": {
-      "fullName": "フルネーム",
-      "company": "会社",
-      "workEmail": "仕事用メール",
-      "selectPlan": "プラン興味を選択",
-      "basicPlan": "ベーシック - $99/月",
-      "professionalPlan": "プロフェッショナル - $299/月",
-      "businessPlan": "ビジネス - $499/月",
-      "enterprisePlan": "エンタープライズ - $1500/月",
-      "message": "ペネトレーションテストのニーズについて教えてください...",
-      "sendMessage": "メッセージを送信",
-      "responseTime": "営業時間内に4時間以内に返信いたします。送信することで、プライバシーポリシーに同意したことになります。"
-    }
+    "getInTouch": "お問い合わせ",
+    "description": "インフラストラクチャを保護する準備はできていますか？セキュリティ専門家チームが NextecAsia の開始をサポートします。",
+    "emailSupport": "メールサポート",
+    "phoneSupport": "電話サポート",
+    "globalPresence": "グローバルプレゼンス",
+    "servingWorldwide": "世界中のセキュリティチームにサービスを提供",
+    "multiTenantPlatform": "マルチテナントクラウドプラットフォーム",
+    "responseTime": "4時間以内に返信",
+    "businessHours": "月-金 9AM-6PM EST",
+    "fullName": "フルネーム",
+    "company": "会社",
+    "workEmail": "仕事用メール",
+    "selectPlan": "プラン興味を選択",
+    "tellUsAbout": "ペネトレーションテストのニーズについて教えてください...",
+    "sendMessage": "メッセージを送信",
+    "responseNote": "営業時間内に4時間以内に返信いたします。送信することで、プライバシーポリシーに同意したことになります。"
   },
   "footer": {
-    "description": "高度なセキュリティ機能、マルチテナントアーキテクチャ、AI駆動インサイトを備えたエンタープライズグレードのペネトレーションテスト脆弱性管理プラットフォーム。",
+    "description": "ペネトレーションテストプロジェクト、発見事項、レポートを管理するための包括的なエンタープライズグレードプラットフォーム。高度なセキュリティ機能とマルチテナントアーキテクチャを備えています。",
     "product": {
       "title": "製品",
       "features": "機能",
       "pricing": "料金",
-      "security": "セキュリティ",
       "integrations": "統合",
-      "api": "API"
+      "api": "API",
+      "documentation": "ドキュメント"
     },
-    "support": {
-      "title": "サポート",
+    "company": {
+      "title": "会社",
+      "about": "会社概要",
+      "blog": "ブログ",
       "contact": "お問い合わせ",
-      "documentation": "ドキュメント",
-      "helpCenter": "ヘルプセンター",
-      "systemStatus": "システムステータス",
-      "community": "コミュニティ"
+      "careers": "採用情報",
+      "support": "サポート"
     },
-    "copyright": "全著作権所有。",
+    "copyright": "© 2025 NextecAsia。全著作権所有。",
     "legal": {
       "terms": "利用規約",
       "privacy": "プライバシーポリシー",

@@ -1,242 +1,138 @@
 {
   "hero": {
     "title": "NextecAsia",
-    "description": "NextecAsia provides comprehensive solutions to identify, assess, and remediate security vulnerabilities with maximum efficiency.",
-    "mainHeading": "Enterprise Vulnerability Management",
-    "mainDescription": "Comprehensive platform designed for modern security teams, offering advanced vulnerability discovery, assessment, and remediation capabilities.",
-    "viewPricing": "View Pricing",
-    "productFeatures": "Product Features",
-    "benefits": {
-      "enterprise": "Enterprise Security",
-      "threat": "Threat Intelligence",
-      "reporting": "Smart Reporting",
-      "support": "Expert Support",
-      "compliance": "Compliance Ready"
-    }
+    "subtitle": "Nextec-RiskLens Platform",
+    "description": "A comprehensive, enterprise-grade platform for managing penetration testing projects, findings, and reports with advanced security features and multi-tenant architecture",
+    "startTrial": "Start Free Trial",
+    "viewDemo": "View Demo",
+    "trustedBy": "Trusted by security teams worldwide"
   },
   "nav": {
-    "product": "Product",
+    "features": "Features",
+    "howItWorks": "How It Works",
     "pricing": "Pricing",
-    "contact": "Contact",
-    "about": "About",
-    "getStarted": "Get Started"
-  },
-  "trialCard": {
-    "title": "Free Trial",
-    "subtitle": "14-day free trial",
-    "rating": "4.9/5",
-    "ratingText": "User Rating",
-    "emailPlaceholder": "Work Email",
-    "companyPlaceholder": "Company Name",
-    "startTrial": "Start Free Trial",
-    "terms": "By clicking, you agree to our Terms of Service and Privacy Policy"
+    "integrations": "Integrations",
+    "contact": "Contact"
   },
   "features": {
-    "title": "Why Choose NextecAsia?",
+    "title": "Why Choose Nextec-RiskLens?",
     "subtitle": "Transform your security operations with cutting-edge technology and proven expertise",
-    "items": {
-      "multiTenant": {
-        "title": "Multi-Tenant Architecture",
-        "description": "Isolated tenant environments with dedicated management controls and complete data separation."
-      },
-      "accessControl": {
-        "title": "Advanced Access Control",
-        "description": "Granular permissions with role-based access control for teams of all sizes."
-      },
-      "intelligentInsights": {
-        "title": "Intelligent Insights",
-        "description": "AI-powered vulnerability analysis and remediation guidance for faster threat resolution."
-      },
-      "realTimeNotifications": {
-        "title": "Real-Time Notifications",
-        "description": "Stay ahead of threats with instant alerts and SLA breach monitoring."
-      },
-      "professionalReporting": {
-        "title": "Professional Reporting",
-        "description": "Generate comprehensive, compliance-ready reports with customizable templates and branding."
-      },
-      "riskAssessment": {
-        "title": "Risk Assessment Engine",
-        "description": "Automatic risk scoring with color-coded indicators and real-time vulnerability tracking."
-      }
-    }
-  },
-  "showcase": {
-    "title": "See NextecAsia in Action",
-    "subtitle": "Powerful features designed for modern security teams",
-    "riskAssessment": {
-      "title": "Risk Assessment Dashboard",
-      "description": "Real-time risk scoring with color-coded severity levels and trend analysis"
-    },
     "multiTenant": {
       "title": "Multi-Tenant Architecture",
-      "description": "Complete tenant isolation with dedicated management and resource allocation"
+      "description": "Isolated tenant environments with dedicated management controls and complete data separation for enterprise security"
     },
-    "aiPowered": {
-      "title": "AI-Powered Assistance",
-      "description": "Multi-provider AI support for vulnerability analysis and remediation guidance"
+    "engagementManagement": {
+      "title": "Engagement Management",
+      "description": "Comprehensive project and sub-project management with risk scoring and vulnerability tracking"
+    },
+    "aiFindings": {
+      "title": "AI-Powered Findings",
+      "description": "Multi-provider AI support (OpenAI, Claude, Gemini, DeepSeek) for vulnerability analysis and remediation guidance"
+    },
+    "professionalReporting": {
+      "title": "Professional Reporting",
+      "description": "Template-based report creation with rich text editing, PDF export, and compliance-ready documentation"
+    },
+    "realTimeNotifications": {
+      "title": "Real-Time Notifications",
+      "description": "WebSocket-powered live notifications, SLA breach monitoring, and comprehensive audit logging"
     }
   },
-  "trialForm": {
-    "title": "Start your pentest management",
-    "description": "Join thousands of security professionals who trust NextecAsia",
-    "emailLabel": "Work Email",
-    "emailPlaceholder": "Enter your work email",
-    "companyLabel": "Company Name",
-    "companyPlaceholder": "Enter your company name",
-    "startTrial": "Start Free Trial",
-    "terms": "By signing up, you agree to our Terms of Service and Privacy Policy"
-  },
-  "featuresList": {
-    "customizableTemplates": "Own customizable report templates",
-    "aiPoweredFindings": "AI powered finding explanation and management reporting",
-    "multiTenant": "Multi-tenant architecture",
-    "realTimeNotifications": "Real-time notifications",
-    "customerService": "Good customer service"
-  },
   "howItWorks": {
-    "title": "How NextecAsia Works",
+    "title": "How Nextec-RiskLens Works",
     "subtitle": "Streamlined workflow from initial assessment to final report delivery",
-    "steps": {
-      "setup": {
-        "title": "Setup & Configure",
-        "description": "Create tenant, configure users, roles, and set up your organization."
-      },
-      "plan": {
-        "title": "Plan & Execute",
-        "description": "Create engagements, assign teams, and execute security assessments."
-      },
-      "document": {
-        "title": "Document & Report",
-        "description": "Record findings with detailed analysis and generate professional reports."
-      },
-      "track": {
-        "title": "Track & Deliver",
-        "description": "Monitor progress, track remediation, and deliver results to stakeholders."
-      }
+    "step1": {
+      "title": "Setup & Configure",
+      "description": "Create tenant, configure users, roles, and set up your organization with multi-tenant isolation"
+    },
+    "step2": {
+      "title": "Plan & Execute",
+      "description": "Create engagements, assign teams, and execute security assessments with methodology integration"
+    },
+    "step3": {
+      "title": "Document & Report",
+      "description": "Record findings with AI-powered analysis and generate professional, compliance-ready reports"
+    },
+    "step4": {
+      "title": "Track & Deliver",
+      "description": "Monitor progress, track remediation, and deliver results to stakeholders with real-time updates"
     }
   },
   "integrations": {
     "title": "Powerful Integrations",
-    "subtitle": "Seamlessly connect with your existing tools and workflows",
-    "description": "Need a custom integration? Our API-first architecture makes it easy to connect with any tool.",
-    "viewApiDocs": "View API Docs",
-    "requestIntegration": "Request Integration"
+    "subtitle": "Seamlessly connect with your existing tools and workflows"
   },
   "pricing": {
-    "title": "Choose Your Plan",
-    "subtitle": "Start with our flexible pricing plans. All plans include a 14-day free trial.",
-    "footer": "All plans include SSL encryption, 99.9% uptime SLA, and 24/7 support.",
-    "contactUs": "Contact us",
-    "enterprisePricing": "for custom enterprise pricing.",
-    "plans": {
-      "basic": {
-        "name": "Basic",
-        "subtitle": "Perfect for startups",
-        "cta": "Start Free Trial",
-        "features": {
-          "engagements": "5 Engagements/Projects",
-          "users": "Up to 10 Users",
-          "aiCredits": "100 AI Credits/month",
-          "whiteLabel": "White-label Option",
-          "emailSupport": "Email Support",
-          "standardTemplates": "Standard Templates"
-        }
-      },
-      "professional": {
-        "name": "Professional",
-        "subtitle": "Growing security teams",
-        "cta": "Start Free Trial",
-        "features": {
-          "engagements": "25 Engagements/Projects",
-          "users": "Up to 50 Users",
-          "aiCredits": "1,000 AI Credits/month",
-          "prioritySupport": "Priority Support",
-          "customTemplates": "Custom Templates",
-          "apiAccess": "API Access",
-          "whiteLabel": "White-label Option"
-        }
-      },
-      "business": {
-        "name": "Business",
-        "subtitle": "Enterprise-ready",
-        "cta": "Start Free Trial",
-        "features": {
-          "engagements": "Unlimited Engagements/Projects",
-          "users": "Unlimited Users",
-          "aiCredits": "Unlimited AI Credits",
-          "reportingFeatures": "All Reporting Features",
-          "phoneSupport": "24/7 Phone Support",
-          "whiteLabel": "White-label Option",
-          "advancedIntegrations": "Advanced Integrations"
-        }
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "subtitle": "Full tenant control",
-        "cta": "Contact Sales",
-        "features": {
-          "everything": "Everything in Business",
-          "sellPrice": "Sell at your Own Price",
-          "customBranding": "Custom Branding",
-          "tenantManagement": "Full Tenant Management",
-          "dedicatedCsm": "Dedicated CSM",
-          "customSla": "Custom SLA",
-          "onPremise": "On-premise Deployment",
-          "advancedSecurity": "Advanced Security Features",
-          "customIntegrations": "Custom Integrations"
-        }
-      }
-    }
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that fits your security needs",
+    "basic": {
+      "name": "Basic",
+      "subtitle": "Perfect for startups",
+      "price": "99",
+      "period": "/month"
+    },
+    "professional": {
+      "name": "Professional",
+      "subtitle": "Growing security teams",
+      "price": "299",
+      "period": "/month"
+    },
+    "business": {
+      "name": "Business",
+      "subtitle": "Enterprise security",
+      "price": "499",
+      "period": "/month"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "subtitle": "Full tenant management",
+      "price": "1499",
+      "period": "/month"
+    },
+    "mostPopular": "Most Popular",
+    "startTrial": "Start Free Trial",
+    "contactSales": "Contact Sales",
+    "freeTrialNote": "All plans include a 14-day free trial. No credit card required."
   },
   "contact": {
     "title": "Get Started Today",
     "subtitle": "Ready to transform your penetration testing workflow? Contact our team or start your free trial.",
-    "email": {
-      "title": "Email Support",
-      "responseTime": "Response within 4 hours"
-    },
-    "phone": {
-      "title": "Phone Support",
-      "availability": "Mon-Fri 9AM-6PM EST"
-    },
-    "headquarters": {
-      "title": "Headquarters",
-      "region": "Serving APAC region"
-    },
-    "form": {
-      "fullName": "Full name",
-      "company": "Company",
-      "workEmail": "Work email",
-      "selectPlan": "Select plan interest",
-      "basicPlan": "Basic - $99/month",
-      "professionalPlan": "Professional - $299/month",
-      "businessPlan": "Business - $499/month",
-      "enterprisePlan": "Enterprise - $1500/month",
-      "message": "Tell us about your penetration testing needs...",
-      "sendMessage": "Send Message",
-      "responseTime": "We'll respond within 4 hours during business hours. By submitting, you agree to our privacy policy."
-    }
+    "getInTouch": "Get in Touch",
+    "description": "Ready to secure your infrastructure? Our team of security experts is here to help you get started with NextecAsia.",
+    "emailSupport": "Email Support",
+    "phoneSupport": "Phone Support",
+    "globalPresence": "Global Presence",
+    "servingWorldwide": "Serving security teams worldwide",
+    "multiTenantPlatform": "Multi-tenant cloud platform",
+    "responseTime": "Response within 4 hours",
+    "businessHours": "Mon-Fri 9AM-6PM EST",
+    "fullName": "Full name",
+    "company": "Company",
+    "workEmail": "Work email",
+    "selectPlan": "Select plan interest",
+    "tellUsAbout": "Tell us about your penetration testing needs...",
+    "sendMessage": "Send Message",
+    "responseNote": "We'll respond within 4 hours during business hours. By submitting, you agree to our privacy policy."
   },
   "footer": {
-    "description": "Enterprise-grade pentest vulnerability management platform with advanced security features, multi-tenant architecture, and AI-powered insights.",
+    "description": "A comprehensive, enterprise-grade platform for managing penetration testing projects, findings, and reports with advanced security features and multi-tenant architecture.",
     "product": {
       "title": "Product",
       "features": "Features",
       "pricing": "Pricing",
-      "security": "Security",
       "integrations": "Integrations",
-      "api": "API"
+      "api": "API",
+      "documentation": "Documentation"
     },
-    "support": {
-      "title": "Support",
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "blog": "Blog",
       "contact": "Contact",
-      "documentation": "Documentation",
-      "helpCenter": "Help Center",
-      "systemStatus": "System Status",
-      "community": "Community"
+      "careers": "Careers",
+      "support": "Support"
     },
-    "copyright": "All rights reserved.",
+    "copyright": "© 2025 NextecAsia. All rights reserved.",
     "legal": {
       "terms": "Terms of Service",
       "privacy": "Privacy Policy",

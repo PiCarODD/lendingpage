@@ -52,7 +52,7 @@ export default function NextecAsiaLanding() {
               className="w-full lg:w-2/3"
             >
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              NextecAsia
+                NextecAsia
                 <span className="ml-2 text-purple-400">Pentest Vulnerability Management</span>
               </h1>
 
@@ -232,7 +232,7 @@ export default function NextecAsiaLanding() {
                     <rect x="120" y="20" width="20" height="90" fill="#16a34a" />
                   </g>
                 </svg>
-              </div>
+            </div>
               <h4 className="text-xl font-semibold mb-3">Risk Assessment Dashboard</h4>
               <p className="text-slate-400 text-sm">
                 Real-time risk scoring with color-coded severity levels and trend analysis
@@ -285,7 +285,7 @@ export default function NextecAsiaLanding() {
                     <text x="275" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">3 Active Tenants</text>
                   </g>
                 </svg>
-              </div>
+          </div>
               <h4 className="text-xl font-semibold mb-3">Multi-Tenant Architecture</h4>
               <p className="text-slate-400 text-sm">
                 Complete tenant isolation with dedicated management and resource allocation
@@ -343,8 +343,8 @@ export default function NextecAsiaLanding() {
                     <text x="0" y="30" fill="#94a3b8" fontSize="10">Monthly Limit: 2,000</text>
                     <rect x="0" y="35" width="100" height="4" rx="2" fill="#374151" />
                     <rect x="0" y="35" width="62" height="4" rx="2" fill="#7c3aed" />
-                  </g>
-                </svg>
+              </g>
+            </svg>
               </div>
               <h4 className="text-xl font-semibold mb-3">AI-Powered Assistance</h4>
               <p className="text-slate-400 text-sm">
@@ -378,7 +378,7 @@ export default function NextecAsiaLanding() {
                   </div>
                   <h4 className="text-xl font-semibold mb-3 text-white">{s.title}</h4>
                   <p className="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
-                </div>
+              </div>
                 {idx < STEPS.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-purple-600 to-transparent transform translate-x-4" />
                 )}
@@ -413,7 +413,7 @@ export default function NextecAsiaLanding() {
                   </div>
                   <h4 className="font-semibold text-sm text-white">{integration.name}</h4>
                   <p className="text-xs text-slate-400 mt-1">{integration.category}</p>
-                </div>
+              </div>
               </motion.div>
             ))}
           </div>
@@ -542,7 +542,7 @@ export default function NextecAsiaLanding() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <div>
+            <div>
                     <h4 className="text-lg font-semibold text-white">Phone Support</h4>
                     <p className="text-slate-400 mt-1">+1 (555) 123-4567</p>
                     <p className="text-slate-500 text-sm mt-1">Mon-Fri 9AM-6PM EST</p>

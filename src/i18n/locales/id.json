@@ -1,171 +1,147 @@
 {
   "hero": {
     "title": "NextecAsia",
-    "description": "NextecAsia memberikan solusi komprehensif untuk mengidentifikasi, menilai, dan mengatasi kerentanan keamanan dengan efisiensi maksimal.",
-    "cta": "Mulai Uji Coba Gratis",
-    "benefits": {
-      "enterprise": "Keamanan Perusahaan",
-      "threat": "Intelijen Ancaman",
-      "reporting": "Pelaporan Cerdas",
-      "support": "Dukungan Ahli",
-      "compliance": "Siap Kepatuhan"
-    }
+    "subtitle": "Platform Nextec-RiskLens",
+    "description": "Platform tingkat perusahaan yang komprehensif untuk mengelola proyek pengujian penetrasi, temuan, dan laporan dengan fitur keamanan canggih dan arsitektur multi-tenant",
+    "startTrial": "Mulai Uji Coba Gratis",
+    "viewDemo": "Lihat Demo",
+    "trustedBy": "Dipercaya oleh tim keamanan di seluruh dunia"
   },
   "nav": {
-    "product": "Produk",
+    "features": "Fitur",
+    "howItWorks": "Cara Kerja",
     "pricing": "Harga",
-    "contact": "Kontak",
-    "about": "Tentang",
-    "getStarted": "Mulai Sekarang"
-  },
-  "trialCard": {
-    "title": "Uji Coba Gratis 14 Hari",
-    "description": "Jangan ada komitmen. Batalkan kapan saja.",
-    "cta": "Mulai Uji Coba Gratis"
+    "integrations": "Integrasi",
+    "contact": "Hubungi Kami"
   },
   "features": {
-    "title": "Mengapa Memilih NextecAsia?",
-    "subtitle": "Transformasikan operasi keamanan Anda dengan teknologi terdepan dan keahlian yang terbukti",
-    "items": {
-      "multiTenant": {
-        "title": "Arsitektur Multi-Tenant",
-        "description": "Lingkungan tenant yang terisolasi dengan kontrol manajemen khusus dan pemisahan data yang lengkap."
-      },
-      "accessControl": {
-        "title": "Kontrol Akses Berbasis Peran",
-        "description": "Sistem izin yang canggih dengan kontrol akses granular untuk pengguna dan grup."
-      },
-      "intelligentInsights": {
-        "title": "Wawasan Cerdas AI",
-        "description": "Analisis otomatis dan rekomendasi yang dipersonalisasi untuk meningkatkan postur keamanan Anda."
-      },
-      "realTimeNotifications": {
-        "title": "Notifikasi Real-Time",
-        "description": "Peringatan instan dan pembaruan status untuk semua aktivitas keamanan penting."
-      },
-      "professionalReporting": {
-        "title": "Pelaporan Profesional",
-        "description": "Template laporan yang dapat disesuaikan dengan standar industri dan branding perusahaan."
-      },
-      "riskAssessment": {
-        "title": "Penilaian Risiko Otomatis",
-        "description": "Sistem penilaian risiko yang cerdas dengan prioritas berdasarkan dampak dan kemungkinan."
-      }
+    "title": "Mengapa Memilih Nextec-RiskLens?",
+    "subtitle": "Ubah operasi keamanan Anda dengan teknologi mutakhir dan keahlian yang terbukti",
+    "multiTenant": {
+      "title": "Arsitektur Multi-Tenant",
+      "description": "Lingkungan tenant yang terisolasi dengan kontrol manajemen khusus dan pemisahan data lengkap untuk keamanan perusahaan"
+    },
+    "engagementManagement": {
+      "title": "Manajemen Keterlibatan",
+      "description": "Manajemen proyek dan sub-proyek yang komprehensif dengan penilaian risiko dan pelacakan kerentanan"
+    },
+    "aiFindings": {
+      "title": "Temuan Berbasis AI",
+      "description": "Dukungan AI multi-provider (OpenAI, Claude, Gemini, DeepSeek) untuk analisis kerentanan dan panduan perbaikan"
+    },
+    "professionalReporting": {
+      "title": "Pelaporan Profesional",
+      "description": "Pembuatan laporan berbasis template dengan pengeditan teks kaya, ekspor PDF, dan dokumen siap kepatuhan"
+    },
+    "realTimeNotifications": {
+      "title": "Notifikasi Real-Time",
+      "description": "Notifikasi langsung yang didukung WebSocket, pemantauan pelanggaran SLA, dan pencatatan audit yang komprehensif"
     }
   },
-  "showcase": {
-    "title": "Lihat NextecAsia dalam Aksi",
-    "description": "Platform kami memberikan visibilitas lengkap ke dalam postur keamanan Anda, memungkinkan pengambilan keputusan yang lebih baik dan respons yang lebih cepat terhadap ancaman."
-  },
   "howItWorks": {
-    "title": "Bagaimana NextecAsia Bekerja",
-    "subtitle": "Proses sederhana 4 langkah untuk mengamankan aset digital Anda",
-    "steps": {
-      "setup": {
-        "title": "Setup & Konfigurasi",
-        "description": "Setup cepat dengan integrasi otomatis ke infrastruktur keamanan yang ada."
-      },
-      "plan": {
-        "title": "Rencana & Eksekusi",
-        "description": "Rencanakan dan jalankan penilaian keamanan yang komprehensif dengan alat yang tepat."
-      },
-      "document": {
-        "title": "Dokumen & Laporan",
-        "description": "Dokumentasikan temuan dan buat laporan profesional yang dapat disesuaikan."
-      },
-      "track": {
-        "title": "Lacak & Kirim",
-        "description": "Lacak kemajuan remediasi dan kirim laporan final kepada stakeholder."
-      }
+    "title": "Bagaimana Nextec-RiskLens Bekerja",
+    "subtitle": "Alur kerja yang efisien dari penilaian awal hingga pengiriman laporan akhir",
+    "step1": {
+      "title": "Setup & Konfigurasi",
+      "description": "Buat tenant, konfigurasi pengguna, peran, dan atur organisasi Anda dengan isolasi multi-tenant"
+    },
+    "step2": {
+      "title": "Rencana & Eksekusi",
+      "description": "Buat keterlibatan, tetapkan tim, dan lakukan penilaian keamanan dengan integrasi metodologi"
+    },
+    "step3": {
+      "title": "Dokumentasi & Laporan",
+      "description": "Catat temuan dengan analisis berbasis AI dan buat laporan profesional yang siap kepatuhan"
+    },
+    "step4": {
+      "title": "Lacak & Kirim",
+      "description": "Pantau kemajuan, lacak perbaikan, dan kirim hasil kepada pemangku kepentingan dengan pembaruan real-time"
     }
   },
   "integrations": {
     "title": "Integrasi yang Kuat",
-    "subtitle": "Terhubung dengan alat keamanan yang sudah ada dan alur kerja tim Anda",
-    "description": "NextecAsia terintegrasi dengan mulus dengan stack keamanan Anda yang ada, memastikan implementasi yang cepat dan efisien."
+    "subtitle": "Terhubung secara mulus dengan alat dan alur kerja yang ada"
   },
   "pricing": {
-    "title": "Pricing Sederhana dan Transparan",
-    "subtitle": "Pilih paket yang tepat untuk kebutuhan keamanan Anda",
-    "monthly": "bulanan",
-    "plans": {
-      "basic": {
-        "name": "Dasar",
-        "subtitle": "Sempurna untuk startup",
-        "cta": "Mulai Uji Coba Gratis",
-        "features": {
-          "engagements": "5 Engagement/Proyek",
-          "users": "Hingga 10 Pengguna",
-          "aiCredits": "100 Kredit AI/bulan",
-          "whiteLabel": "Opsi White-label",
-          "emailSupport": "Dukungan Email",
-          "standardTemplates": "Template Standar"
-        }
-      },
-      "professional": {
-        "name": "Profesional",
-        "subtitle": "Ideal untuk tim keamanan",
-        "cta": "Mulai Uji Coba Gratis",
-        "features": {
-          "engagements": "15 Engagement/Proyek",
-          "users": "Hingga 25 Pengguna",
-          "aiCredits": "500 Kredit AI/bulan",
-          "prioritySupport": "Dukungan Prioritas",
-          "customTemplates": "Template Kustom",
-          "apiAccess": "Akses API",
-          "whiteLabel": "White-label"
-        }
-      },
-      "business": {
-        "name": "Bisnis",
-        "subtitle": "Untuk organisasi yang berkembang",
-        "cta": "Mulai Uji Coba Gratis",
-        "features": {
-          "engagements": "Engagement/Proyek Tak Terbatas",
-          "users": "Pengguna Tak Terbatas",
-          "aiCredits": "Kredit AI Tak Terbatas",
-          "reportingFeatures": "Fitur Pelaporan Lanjutan",
-          "phoneSupport": "Dukungan Telepon",
-          "whiteLabel": "White-label",
-          "advancedIntegrations": "Integrasi Lanjutan"
-        }
-      },
-      "enterprise": {
-        "name": "Perusahaan",
-        "subtitle": "Solusi lengkap untuk perusahaan besar",
-        "cta": "Hubungi Penjualan",
-        "features": {
-          "everything": "Semua fitur Business",
-          "sellPrice": "Harga jual yang dapat disesuaikan",
-          "customBranding": "Branding Kustom",
-          "tenantManagement": "Manajemen Tenant Lengkap",
-          "dedicatedCsm": "Customer Success Manager Khusus",
-          "customSla": "SLA Kustom",
-          "onPremise": "Opsi On-Premise",
-          "advancedSecurity": "Keamanan Lanjutan",
-          "customIntegrations": "Integrasi Kustom"
-        }
-      }
-    }
+    "title": "Harga Sederhana dan Transparan",
+    "subtitle": "Pilih rencana yang sesuai dengan kebutuhan keamanan Anda",
+    "basic": {
+      "name": "Dasar",
+      "subtitle": "Sempurna untuk startup",
+      "price": "99",
+      "period": "/bulan"
+    },
+    "professional": {
+      "name": "Profesional",
+      "subtitle": "Tim keamanan yang berkembang",
+      "price": "299",
+      "period": "/bulan"
+    },
+    "business": {
+      "name": "Bisnis",
+      "subtitle": "Keamanan perusahaan",
+      "price": "499",
+      "period": "/bulan"
+    },
+    "enterprise": {
+      "name": "Perusahaan",
+      "subtitle": "Manajemen tenant penuh",
+      "price": "1499",
+      "period": "/bulan"
+    },
+    "mostPopular": "Paling Populer",
+    "startTrial": "Mulai Uji Coba Gratis",
+    "contactSales": "Hubungi Penjualan",
+    "freeTrialNote": "Semua rencana termasuk uji coba gratis 14 hari. Tidak perlu kartu kredit."
   },
   "contact": {
-    "title": "Siap untuk Memulai?",
-    "subtitle": "Bergabunglah dengan ribuan profesional keamanan yang mempercayai NextecAsia",
-    "cta": "Mulai Uji Coba Gratis"
+    "title": "Mulai Hari Ini",
+    "subtitle": "Siap untuk mengubah alur kerja pengujian penetrasi Anda? Hubungi tim kami atau mulai uji coba gratis.",
+    "getInTouch": "Hubungi Kami",
+    "description": "Siap untuk mengamankan infrastruktur Anda? Tim ahli keamanan kami siap membantu Anda memulai dengan NextecAsia.",
+    "emailSupport": "Dukungan Email",
+    "phoneSupport": "Dukungan Telepon",
+    "globalPresence": "Kehadiran Global",
+    "servingWorldwide": "Melayani tim keamanan di seluruh dunia",
+    "multiTenantPlatform": "Platform cloud multi-tenant",
+    "responseTime": "Respon dalam 4 jam",
+    "businessHours": "Sen-Jum 9AM-6PM EST",
+    "fullName": "Nama lengkap",
+    "company": "Perusahaan",
+    "workEmail": "Email kerja",
+    "selectPlan": "Pilih minat rencana",
+    "tellUsAbout": "Ceritakan kepada kami tentang kebutuhan pengujian penetrasi Anda...",
+    "sendMessage": "Kirim Pesan",
+    "responseNote": "Kami akan merespons dalam 4 jam selama jam kerja. Dengan mengirimkan, Anda setuju dengan kebijakan privasi kami."
   },
   "footer": {
-    "description": "Platform manajemen kerentanan terdepan untuk tim keamanan modern.",
-    "links": {
-      "product": "Produk",
+    "description": "Platform tingkat perusahaan yang komprehensif untuk mengelola proyek pengujian penetrasi, temuan, dan laporan dengan fitur keamanan canggih dan arsitektur multi-tenant.",
+    "product": {
+      "title": "Produk",
+      "features": "Fitur",
       "pricing": "Harga",
-      "about": "Tentang",
-      "contact": "Kontak",
-      "privacy": "Privasi",
-      "terms": "Ketentuan"
+      "integrations": "Integrasi",
+      "api": "API",
+      "documentation": "Dokumentasi"
     },
-    "copyright": "© 2024 NextecAsia. Semua hak dilindungi."
+    "company": {
+      "title": "Perusahaan",
+      "about": "Tentang Kami",
+      "blog": "Blog",
+      "contact": "Hubungi Kami",
+      "careers": "Karir",
+      "support": "Dukungan"
+    },
+    "copyright": "© 2025 NextecAsia. Hak cipta dilindungi.",
+    "legal": {
+      "terms": "Ketentuan Layanan",
+      "privacy": "Kebijakan Privasi",
+      "cookies": "Kebijakan Cookie"
+    }
   },
   "languageSelector": {
+    "selectLanguage": "Pilih Bahasa",
+    "searchLanguages": "Cari bahasa...",
     "popular": "Bahasa Populer",
     "allLanguages": "Semua Bahasa",
     "search": "Cari bahasa..."
